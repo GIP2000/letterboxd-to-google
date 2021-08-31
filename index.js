@@ -1,5 +1,4 @@
 const puppeteer = require('puppeteer');
-// const fs = require('fs');
 const user = "gip2000";
 
 (async() => {
