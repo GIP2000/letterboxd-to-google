@@ -1,7 +1,9 @@
 const puppeteer = require('puppeteer-extra');
 const pluginStealth = require('puppeteer-extra-plugin-stealth');
 const { letterBoxd, google } = require('./accountInfo.json')
+const AdblockerPlugin = require('puppeteer-extra-plugin-adblocker')
 puppeteer.use(pluginStealth());
+puppeteer.use(AdblockerPlugin()); 
 
 const checkExists = async(selector, page) => {
     const elementHandle = await page.$(selector);
@@ -68,7 +70,7 @@ const letterBoxdSignIn = async(page = null) => {
         headless: false
     });
     const page = await browser.newPage();
-    await googleSignIn(page);
+    // await googleSignIn(page);
     await letterBoxdSignIn(page);
     await browser.close();
 })();
