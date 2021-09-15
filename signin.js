@@ -67,7 +67,6 @@ const letterBoxdSignIn = async(page = null) => {
 (async() => {
     const browser = await puppeteer.launch({
         userDataDir: __dirname + "/userData",
-        headless: false
     });
     const page = await browser.newPage();
     await googleSignIn(page);
