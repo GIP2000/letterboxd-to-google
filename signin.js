@@ -70,7 +70,7 @@ const letterBoxdSignIn = async(page = null) => {
         headless: false
     });
     const page = await browser.newPage();
-    // await googleSignIn(page);
+    await googleSignIn(page);
     await letterBoxdSignIn(page);
     await browser.close();
 })();
